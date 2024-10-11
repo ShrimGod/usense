@@ -1,3 +1,4 @@
+import os
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.fft import fft2, fftshift
@@ -30,8 +31,8 @@ def compute_unwrapped_phase(fft_frame):
 
 # Main function
 def main():
-    # File path to GIF
-    filepath = r"C:\Users\Douglas Fleetwood\Desktop\uSense\0.5mL_4mm.gif"
+    # File path to GIF (using relative path)
+    filepath = os.path.join(os.path.dirname(__file__), '0.5mL_4mm.gif')
     
     # Load the GIF frames
     gif_frames = load_gif(filepath)
